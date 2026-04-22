@@ -1,0 +1,13 @@
+{
+  "name": "Syllabus Pro",
+  "description": "Hệ thống tự động xây dựng syllabus khoá học chuyên nghiệp cho doanh nghiệp tích hợp AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "AI syllabus generation",
+    "Word/PDF export",
+    "Course discovery"
+  ]
+}

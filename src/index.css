@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
+  --color-editorial-bg: #f2f0eb;
+  --color-editorial-sidebar: #f9f8f6;
+  --color-editorial-ink: #1a1a1a;
+  --color-editorial-line: #dcd7cc;
+  --color-editorial-accent: #2c2c2c;
+}
+
+body {
+  @apply antialiased bg-editorial-bg text-editorial-ink;
+}
+
+.editorial-doc {
+  @apply bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-editorial-line font-serif;
+}
+
+.editorial-input {
+  @apply w-full px-3 py-2 border border-editorial-line bg-white focus:outline-none focus:border-editorial-accent transition-colors text-[13px];
+}
+
+.editorial-label {
+  @apply block text-[11px] uppercase font-bold text-[#6b6658] mb-1.5 tracking-wider;
+}
+
+.editorial-btn {
+  @apply bg-editorial-accent text-white px-4 py-3 text-sm uppercase tracking-widest font-bold transition-opacity hover:opacity-90 active:scale-[0.98];
+}
+
+.editorial-table {
+  @apply w-full border-collapse border border-editorial-ink;
+}
+
+.editorial-table th, .editorial-table td {
+  @apply border border-editorial-ink p-3 align-top text-left;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}
