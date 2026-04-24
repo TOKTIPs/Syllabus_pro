@@ -4,8 +4,10 @@ import { motion } from 'motion/react';
 import { SyllabusInput } from '../types';
 import { cn } from '../lib/utils';
 
+import LogoUpload from './LogoUpload';
+
 interface Props {
-  onGenerate: (input: SyllabusInput) => void;
+  onGenerate: (input: SyllabusInput, logo?: string) => void;
   isLoading: boolean;
 }
 
@@ -15,11 +17,12 @@ export default function SyllabusForm({ onGenerate, isLoading }: Props) {
   const [targetAudience, setTargetAudience] = useState('');
   const [duration, setDuration] = useState('');
   const [requirements, setRequirements] = useState('');
+  const [logo, setLogo] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!courseName.trim()) return;
-    onGenerate({ courseName, goals, targetAudience, duration, requirements });
+    onGenerate({ courseName, goals, targetAudience, duration, requirements }, logo || undefined);
   };
 
   return (
@@ -89,6 +92,8 @@ export default function SyllabusForm({ onGenerate, isLoading }: Props) {
             className="editorial-input resize-none"
           />
         </div>
+
+        <LogoUpload onLogoUpload={setLogo} />
 
         <button
           disabled={isLoading || !courseName}

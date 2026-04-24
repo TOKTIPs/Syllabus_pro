@@ -3,7 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Syllabus Pro</title>
+    <script>
+      // Prevent libraries from crashing if they try to override window.fetch in environments where it is a non-writable getter
+      (function() {
+        if (window.fetch && Object.getOwnPropertyDescriptor(window, 'fetch')?.writable === false) {
+          const originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            value: originalFetch,
+            writable: true,
+            configurable: true
+          });
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
